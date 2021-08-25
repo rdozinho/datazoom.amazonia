@@ -324,3 +324,4 @@ load_pam = function(dataset=NULL,raw_data=FALSE,geo_level = "municipality", time
   return(dat)
 
 }
+
