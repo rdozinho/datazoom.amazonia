@@ -1,0 +1,66 @@
+---
+title: "load_pam"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%")
+```
+
+# Usage 
+
+```{r eval=FALSE}
+There are five parameters in this function:
+  
+  1. dataset: There are seven possible choices. 
+
+  These datasets contain statistics such as quantity produced, area planted and harvested, average quantity of output and monetary value of such output. 
+  
+  # pam_all_crops : it selects data about agricultural products divided in permanent and temporary farmed land. 
+  # pam_permanent_crops : it selects the data about agricultural products produced in permanent farmed land.
+  # pam_temporary_crops :it selects the data about agricultural products produced in temporary farmed land.
+  # pam_corn : it selects the data from the first and the second harvests of corn.
+  # pam_potato : it selects the data from the first, the second and the third harvests of potato.
+  # pam_peanut : it selects the data from the first and the second harvests of peanut.
+  # pam_beans :  it selects the data from the first, the second and the third harvests of bean.
+
+  2. raw_data: there are two options:
+  
+  # TRUE: if you want to visualize the  data as it is in the IBGE's site.
+  # FALSE: if you want to visualize the treated (more organized) version of the data. 
+
+  3. geo_level: there are four options:
+  
+  # "country"
+  # "region"
+  # "state" 
+  # "municipality"
+
+  4. time_period:
+    
+  # For pam_all_crops, pam_permanent_crops and pam_temporary_crops, data is available from 1974 to 2019.
+  # For pam_corn, pam_potato, pam_peanut and pam_beans, data is avaiable from 2003 to 2019.
+    
+  5. language : you can choose between portuguese and english
+  
+  # "pt"
+  # "eng"
+
+    
+```
+
+# Examples
+
+```{r eval=FALSE}
+# Download treated (raw_data = FALSE) data related to the production from permanent and temporary farmed lands (dataset = pam_all_crops) by state (geo_level = "state") from 1980 to 1990 (time_period = 1980:1990) in english (language = "eng").
+
+data = load_pam(dataset = pam_all_crops, raw_data = FALSE, geo_level = "state", time_period = 1980:1990, language = "eng")
+
+# Download raw data (raw_data = TRUE) related to the corn production (dataset = pam_corn) by municipality (geo_level = "municipality") from 2010 to 2012 (time_period = 2010:2012) in portuguese (language = "pt").
+
+data = load_pam(dataset = pam_corn, raw_data = TRUE, geo_level = "municipality", time_period = 2010:2012, language = "pt")
+
