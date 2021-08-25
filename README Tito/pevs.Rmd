@@ -21,9 +21,9 @@ Loads information on the amount and value of the production of the exploitation 
 There are five parameters in this function:
   
   1. dataset: there are three choices:
-  # pevs_forest_crops : provides data related to both quantity and value of the forestry activities. The data goes from 1986 to 2019 and it is divided by type of product.
-  # pevs_silviculture : provides data related to both quantity and value of the silviculture. The data goes from 1986 to 2019 and it is divided by type of product.
-  # pevs_silviculture_area : total existing area used for silviculture in 12/31.The data goes from 2013 to 2019 and it is divided by forestry species.  
+  # 'pevs_forest_crops' : provides data related to both quantity and value of the forestry activities. The data goes from 1986 to 2019 and it is divided by type of product.
+  # 'pevs_silviculture' : provides data related to both quantity and value of the silviculture. The data goes from 1986 to 2019 and it is divided by type of product.
+  # 'pevs_silviculture_area' : total existing area used for silviculture in 12/31.The data goes from 2013 to 2019 and it is divided by forestry species.  
   
   2.raw_data : there are two options:
   

@@ -1,23 +1,19 @@
----
-title: "load_ppm"
-output: github_document
----
+load\_ppm
+================
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%")
-```
+Downloads data from PPM (“Pesquisa da Pecuária Municipal”). This survey
+contains information of the livestock inventories (e.g:cattle, pigs and
+hogs) in Brazilian Municipalities. It also provides information on the
+production of animal origin (e.g:output of milk, hen eggs, quail eggs,
+honey) and the value of the production during the reference year.
 
-Downloads data from PPM ("Pesquisa da Pecuária Municipal"). This survey contains information of the livestock inventories (e.g:cattle, pigs and hogs) in Brazilian Municipalities. It also provides information on the production of animal origin (e.g:output of milk, hen eggs, quail eggs, honey) and the value of the production during the reference year. 
+The periodicity of the survey is annual. The geographic coverage is
+national, with results released for Brazil, Major Regions, Federation
+Units, Mesoregions, Microregions and Municipalities.
 
-The periodicity of the survey is annual. The geographic coverage is national, with results released for Brazil, Major Regions, Federation Units, Mesoregions, Microregions and Municipalities.
+# Usage
 
-# Usage 
-
-```{r eval=FALSE}
+``` r
 There are five parameters in this function:
   
   1. dataset: There are five possible choices. 
@@ -57,7 +53,7 @@ There are five parameters in this function:
 
 # Examples
 
-```{r eval=FALSE}
+``` r
 
 # Download treated data (raw_data = FALSE) about aquaculture (dataset = 'ppm_aquaculture') by mesoregion (geo_level = "mesoregion") from 2013 to 2015 (time_period = 2013:2015) in english (language = "eng")
 
@@ -67,5 +63,3 @@ data = load_ppm(dataset = 'ppm_aquaculture', raw_data = FALSE, geo_level = "meso
 
 data = load_ppm(dataset = 'ppm_sheep_farming', raw_data = TRUE, geo_level = "state", time_period = 1980:1995, language = "pt")
 ```
-
-
