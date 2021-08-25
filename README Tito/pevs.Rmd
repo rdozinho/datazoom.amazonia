@@ -1,0 +1,64 @@
+---
+title: "load_pevs"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%")
+```
+
+Loads information on the amount and value of the production of the exploitation of native plant resources and planted forest massifs, as well as existing total and harvested areas of forest crops. Survey is done at the municipal level and data is available from 1986 to 2019.
+
+
+# Usage:
+
+```{r, eval = FALSE}
+
+There are five parameters in this function:
+  
+  1. dataset: there are three choices:
+  # pevs_forest_crops : provides data related to both quantity and value of the forestry activities. The data goes from 1986 to 2019 and it is divided by type of product.
+  # pevs_silviculture : provides data related to both quantity and value of the silviculture. The data goes from 1986 to 2019 and it is divided by type of product.
+  # pevs_silviculture_area : total existing area used for silviculture in 12/31.The data goes from 2013 to 2019 and it is divided by forestry species.  
+  
+  2.raw_data : there are two options:
+  
+  # TRUE: if you want to visualize the  data as it is in the IBGE's site.
+  # FALSE: if you want to visualize the treated (more organized) version of the data. 
+  
+  3. geo_level : there are six options:
+  
+  # "country"
+  # "region"
+  # "state"
+  # "mesoregion"
+  # "microregion"
+  # "city"
+  
+ 4. time_period : as mentioned in the dataset section above, data goes from 1986 to 2019, except for the pevs_silviculture_area dataset where data is available from 2013 to 2019.
+ 
+  # Example: Select data from 2010 to 2012
+  #          time_period = 2010:2012
+
+ 5. language : you can choose between portuguese and english
+  
+  # "pt"
+  # "eng"
+  
+```
+
+# Examples:
+
+```{r, eval = FALSE}
+# Download treated (raw_data = FALSE) silviculture data (dataset = 'pevs_silviculture') by state (geo_level = 'state') from 2012 (time_period =  2012) in portuguese (language = "pt")
+
+data = load_pevs(dataset = 'pevs_silviculture', raw_data = FALSE ,geo_level = 'state', time_period =  2012, language = "pt")
+
+# Download raw (raw_data = TRUE) forest crops data (dataset = 'pevs_forest_crops') by municipality (geo_level = 'municipality') from 2012 to 2013 (time_period =  2013) in english (language = "eng")
+
+data = load_pevs(dataset = 'pevs_forest_crops', raw_data = TRUE, geo_level = "municipality", time_period = 2012:2013, language = "eng")
+
