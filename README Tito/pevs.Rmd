@@ -35,9 +35,7 @@ There are five parameters in this function:
   # "country"
   # "region"
   # "state"
-  # "mesoregion"
-  # "microregion"
-  # "city"
+  # "municipality"
   
  4. time_period : as mentioned in the dataset section above, data goes from 1986 to 2019, except for the pevs_silviculture_area dataset where data is available from 2013 to 2019.
  
