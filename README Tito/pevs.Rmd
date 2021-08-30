@@ -30,7 +30,7 @@ There are five parameters in this function:
   # TRUE: if you want to visualize the  data as it is in the IBGE's site.
   # FALSE: if you want to visualize the treated (more organized) version of the data. 
   
-  3. geo_level : there are six options:
+  3. geo_level : there are four options:
   
   # "country"
   # "region"
