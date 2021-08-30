@@ -537,6 +537,16 @@ data = load_seeg(dataset = "seeg", raw_data = FALSE,
 
 # 6) IBAMA:
 
+Downloads and compiles data on environmental fines at the municipality or
+state levels considering the Amazon region. The user has the option to either download
+or load the previously stored raw data, choosing a time-location aggregation level.
+
+The function returns a data frame with aggregates considering, for each
+time-location period, counts for total the number of infractions, 
+infractions that already went to trial, and 
+number of unique perpetrators of infractions.
+
+
 ```{r eval=FALSE}
 
 There are five parameters in this function:

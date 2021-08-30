@@ -28,23 +28,15 @@ The user has the option of obtaining data either in Portuguese or in English.
 
 There are five parameters in this function:
 
-  1. dataset:
+  1. dataset = "areas_embargadas"
   
   2. raw_data : there are two options:
-  
   # TRUE: if you want to visualize the raw data.
   # FALSE: if you want to visualize the processed version of the data. 
  
-  3. geo_level: two options
+  3. geo_level: "municipality" or "state"
   
-  # "municipality"
-  # "state"
-
   4. language : you can choose between portuguese and english
-  
-  # "pt"
-  # "eng"
-  
   
   5. legal_amazon_only: setting the return of Legal Amazon Data (legal_amazon_only = TRUE) or Country´s Data (legal_amazon_only = FALSE)
   
