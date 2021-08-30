@@ -1,0 +1,68 @@
+---
+title: "load_deter"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%")
+```
+
+Loads information on change in forest cover in the Amazon. Survey is done at state or municipal level.
+
+# Usage:
+
+```{r, eval = FALSE}
+There are five parameters in this function:
+  
+  1. dataset: there are two options:
+  
+  # information about Amazon:   dataset = "deter_amz" 
+  # information about Cerrado:  dataset =  "deter_cerrado"
+  
+  
+
+  2.raw_data: there are two options:
+  
+  # TRUE: if you want to visualize the raw data.
+  # FALSE: if you want to visualize the processed version of the data. 
+  
+  3. geo_level: there are two options: 
+  
+  # "municipality"
+  # "state"
+  
+ 
+ 4. time_period : you can choose from 1988 to 2020
+  
+ # Example: time_period = 2010:2012
+
+ 5. language : you can choose between portuguese and english
+  
+ # "pt"
+ # "eng"
+
+  
+```
+
+
+# Examples:
+
+```{r, eval = FALSE}
+
+# Download raw data (raw_data = TRUE) about Amazon (dataset = "deter_amz") by state (geo_level = "state") from 1988 to 1990 (time_period = 1988:1990) in english (language = 'eng')
+
+data = load_deter(dataset = "deter_amz" , raw_data = TRUE,
+                       geo_level = "state", time_period = 1988:1990,
+                       language = 'eng') 
+
+# Download treated data (raw_data = FALSE) about Cerrado (dataset = "deter_cerrado") by municipality (geo_level = "municipality") from 2010 (time_period = 2010) in portuguese (language = 'pt')
+
+data = load_deter(dataset = "deter_cerrado" , raw_data = FALSE,
+                       geo_level = "municipality", time_period = 2010,
+                       language = 'pt') 
+
+````

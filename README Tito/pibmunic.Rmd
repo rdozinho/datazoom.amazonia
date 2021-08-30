@@ -70,4 +70,4 @@ pibmunic <- load_pibmunic(dataset = 'pibmunic',
                            time_period = 2012,
                            language = "pt",
                            legal_amazon_only = TRUE)
-
+```

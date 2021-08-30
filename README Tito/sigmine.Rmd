@@ -11,10 +11,7 @@ knitr::opts_chunk$set(
   out.width = "100%")
 ```
 
-Loads information the mines being explored legally in Brazil, including their location, status, product being mined and area in square meters etc. Survey is done at municipal and state level.
-The National Mining Agency (ANM) is responsible for this survey.
-
-
+Loads information the mines being explored legally in Brazil, including their location, status, product being mined and area in square meters etc. Survey is done at municipal and state level. The National Mining Agency (ANM) is responsible for this survey.
 
 # Usage 
 
@@ -24,7 +21,6 @@ There are four parameters in this function:
   1. dataset: There is only one possible dataset: 
   # dataset = 'sigmine_active'
 
-  
   2. raw_data: there are two options:
   
   # TRUE: if you want to visualize raw data.
@@ -35,9 +31,7 @@ There are four parameters in this function:
   # "municipality" 
   # "state".
   
-  4. time_period:
-    
-  5. language : you can choose between portuguese and english
+  4. language : you can choose between portuguese and english
   
   # "pt"
   # "eng"
@@ -48,3 +42,18 @@ There are four parameters in this function:
 # Examples
 
 ```{r eval=FALSE}
+
+# Download raw data (raw_data = TRUE) by municipality (geo_level = "municipality") in english (language = 'eng').
+
+data = load_sigmine(dataset = 'sigmine_active',
+                        raw_data = TRUE, geo_level = "municipality",
+                        language = 'eng')
+
+# Download treated data (raw_data = FALSE) by state (geo_level = "state") in portuguese (language = 'pt')
+
+data = load_sigmine(dataset = 'sigmine_active',
+                        raw_data = FALSE, geo_level = "state",
+                        language = 'pt')
+
+
+```
