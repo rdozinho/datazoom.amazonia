@@ -1,4 +1,9 @@
--   Introdução:
+Sobre o código de filtragem na função load\_br\_trade():
+================
+
+  - Introdução:
+
+<!-- end list -->
 
 ``` r
 
@@ -15,7 +20,9 @@
    A partir do '## Load dictionary ##' inicia-se a configuração para (rawdata = FALSE)
 ```
 
--   O que a filtragem faz ?
+  - O que a filtragem faz ?
+
+<!-- end list -->
 
 ``` r
 
@@ -47,8 +54,10 @@ obs: tudo abaixo considera que havíamos selecionado no passo (2) as colunas de 
 4.2) Se usuario escolheu ingles, o processo é analogo a (4.1) mas para ingles.
 ```
 
--   Mas afinal, qual a estrutura mais ‘geral’ do codigo usado na
+  - Mas afinal, qual a estrutura mais ‘geral’ do codigo usado na
     filtragem da comex?
+
+<!-- end list -->
 
 ``` r
 

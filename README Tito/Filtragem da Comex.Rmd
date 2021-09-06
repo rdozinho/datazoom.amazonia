@@ -1,8 +1,6 @@
 ---
 title: "Sobre o código de filtragem na função load_br_trade():"
-output:
-  md_document:
-    variant: markdown_github
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
