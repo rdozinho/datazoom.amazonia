@@ -1,0 +1,87 @@
+exemplos:
+
+1)PRODES:
+
+ex1: funciona                  mas se fizesse (rawdata=FALSE) n funcionaria
+
+ex2: rawdata=FALSE é o problema
+
+2) DETER: 
+
+ex1: funciona,                  mas se fizesse (rawdata=FALSE) n funcionaria
+
+ex2: rawdata=FALSE é o problema
+
+3) DEGRAD
+
+ex1: funciona,                  mas se fizesse (rawdata=FALSE) n funcionaria
+
+ex2: rawdata é o problema
+
+4) COMEX
+
+ex1: funciona
+
+ex2: funciona
+
+
+5) PIB-mun
+
+COUNTRY parece nao ir
+
+ex1: nao funciona
+
+ex2: problema (legal_amazon_only = TRUE?)
+objeto 'legal_amazon' não encontrado
+
+6)CEMPRE
+
+ex1:
+
+ex2: problema (rawdata = false)
+
+ 
+
+7) SIGMINE:
+
+ex1: funcionou
+
+ex2: problema (rawdata=false)
+
+8) PAM:
+
+ex1: funciona
+
+ex2: funciona
+
+9) PEVS 
+
+ex1: funciona
+
+ex2: funciona
+
+10) ppm
+
+ex1: funciona
+
+ex2: funciona
+
+11) ips
+
+ex1: funciona
+
+ex2 : (raw_data = FALSE)
+
+12) SEEG
+
+ex1: Please follow the steps from `googledrive` package to download the data. This may take a while.
+Is it OK to cache OAuth access credentials in the folder
+C:/Users/titon/AppData/Local/gargle/gargle/Cache between R sessions?
+
+ex2 : (raw_data = FALSE)
+
+13) IBAMA
+
+ex1: problema (legal_amazon_only = TRUE)  
+
+ex2: funciona, mas nao funcionaria se (rawdata = false)
