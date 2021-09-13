@@ -200,7 +200,7 @@ label_data_eng = function(df,cols,dic){
   label_value = as.character(dic[dic$var_code == cols,'var_eng'])
 
   df = df %>%
-    dplyr::mutate_at(vars(tidyr::matches(cols)),
+    dplyr::mutate_at(dplyr::vars(tidyr::matches(cols)),
                      ~ labelled(.,as.character(dic[dic$var_code == cols,'var_eng']))
     )
 
@@ -214,7 +214,7 @@ label_data_pt = function(df,cols,dic){
   label_value = as.character(dic[dic$var_code == cols,'var_pt'])
 
   df = df %>%
-    dplyr::mutate_at(vars(tidyr::matches(cols)),
+    dplyr::mutate_at(dplyr::vars(tidyr::matches(cols)),
                      ~ labelled(.,as.character(dic[dic$var_code == cols,'var_pt']))
     )
 
