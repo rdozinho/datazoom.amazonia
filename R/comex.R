@@ -36,7 +36,7 @@ load_br_trade <- function(dataset = NULL, raw_data,
 
   ## We want to download both imports and exports data
 
-  ## Type: By NCM, Município da empresa exportadora/importadora e Posição do Sistema Harmonizado (SH4),
+  ## Type: By NCM, Municipio da empresa exportadora/importadora e Posicao do Sistema Harmonizado (SH4),
   ##
 
   ## https://www.gov.br/produtividade-e-comercio-exterior/pt-br/assuntos/comercio-exterior/estatisticas/base-de-dados-bruta
