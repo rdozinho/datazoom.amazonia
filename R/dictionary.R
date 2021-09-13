@@ -492,10 +492,10 @@ load_dictionary = function(dataset){
       ~var_code,~var_pt,~var_eng,~measure_unit,
 
 
-      2585,'Número de empresas e outras organizações','Number of companies and other organizations','Units',
+      2585,'NÃºmero de empresas e outras organizaÃ§Ãµes','Number of companies and other organizations','Units',
       707,'Pessoal ocupado total','Total active population','People',
       708,'Pessoal ocupado assalariado','Salaried active population','People',
-      662,'Salários e outras remunerações','Wage and other remunerations','1K BRL')
+      662,'SalÃ¡rios e outras remuneraÃ§Ãµes','Wage and other remunerations','1K BRL')
 
   }
 
