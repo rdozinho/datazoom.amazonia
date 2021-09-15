@@ -1,0 +1,14 @@
+Dicionário cempre:
+
+identificadores: identifica um "par" de especificações:
+
+Para cada atividade econômica,podemos selecionar dados ("características") relativos ao:
+a)"Número de empresas e outras organizações" 
+b)"Pessoal ocupado total"                    
+c)"Pessoal ocupado assalariado"             
+d)"Salários e outras remunerações"   
+
+Por fim, temos esses dados para todos os estados brasileiros.
+
+Assim, ao usar um identificador, você vai visualizar, para todos os estados,
+uma atividade econômica escolhida e uma das quatro variáveis a ela associadas.
