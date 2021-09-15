@@ -489,7 +489,10 @@ load_dictionary = function(dataset){
    if (dataset == 'cempre'){
 
     harmonization_dat = tibble::tribble(
-      ~var_code,~var_pt,~var_eng,~unit_value,~unit_quantity,
+      ~var_code,~id_code,~var_pt,~var_eng,~unit_value,~unit_quantity,
+
+      117897,1,'Total','Total','1K BRL','Units',
+      117897,2,'Total','Total', '1K BRL','People'
 
 
   }
