@@ -198,3 +198,5 @@ cempre = cempre %>%
                              variavel == "Salários e outras remunerações"
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117892 ~ "117892_4"
   ))
+
+
