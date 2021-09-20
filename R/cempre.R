@@ -176,7 +176,7 @@ if (geo_level == 'municipality'){
 dat = dat %>%
   dplyr::select(-unidade_de_medida,-unidade_de_medida_codigo)
 
-if(sectors == TRUE & raw_data == TRUE){dat = dat %>%
+if(sectors == TRUE){dat = dat %>%
   mutate(id_code = case_when(variavel == "Número de empresas e outras organizações" &
                                classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117897 ~ "117897_1",
                              variavel == "Pessoal ocupado total" &
