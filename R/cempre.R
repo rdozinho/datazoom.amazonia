@@ -186,7 +186,7 @@ if(sectors == TRUE){dat = dat %>%
                              variavel_codigo == 662 &
                                classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117897 ~ "117897_4",
 
-                             variavel_codigo == 2585 &
+                            variavel_codigo == 2585 &
                                classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 116830 ~ "116830_1",
                              variavel == "Pessoal ocupado total" &
                                classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 116830 ~ "116830_2",
@@ -195,7 +195,7 @@ if(sectors == TRUE){dat = dat %>%
                              variavel_codigo == 662 &
                                classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 116830 ~ "116830_4",
 
-                             variavel_codigo == 2585 &
+                            variavel_codigo == 2585 &
                                classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 116880 ~ "116880_1",
                              variavel == "Pessoal ocupado total" &
                                classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 116880 ~ "116880_2",
@@ -204,7 +204,7 @@ if(sectors == TRUE){dat = dat %>%
                              variavel_codigo == 662 &
                                classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 116880 ~ "116880_4",
 
-                             variavel_codigo == 2585 &
+                            variavel_codigo == 2585 &
                                classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 116910 ~ "116910_1",
                              variavel == "Pessoal ocupado total" &
                                classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 116910 ~ "116910_2",
@@ -213,7 +213,7 @@ if(sectors == TRUE){dat = dat %>%
                              variavel_codigo == 662 &
                                classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 116910 ~ "116910_4",
 
-                             variavel_codigo == 2585 &
+                            variavel_codigo == 2585 &
                                classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117296 ~ "117296_1",
                              variavel == "Pessoal ocupado total" &
                                classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117296 ~ "117296_2",
@@ -222,7 +222,7 @@ if(sectors == TRUE){dat = dat %>%
                              variavel_codigo == 662 &
                                classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117296 ~ "117296_4",
 
-                             variavel_codigo == 2585 &
+                            variavel_codigo == 2585 &
                                classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117307 ~ "117307_1",
                              variavel == "Pessoal ocupado total" &
                                classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117307 ~ "117307_2",
@@ -231,7 +231,7 @@ if(sectors == TRUE){dat = dat %>%
                              variavel_codigo == 662 &
                                classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117307 ~ "117307_4",
 
-                             variavel_codigo == 2585 &
+                            variavel_codigo == 2585 &
                                classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117329 ~ "117329_1",
                              variavel == "Pessoal ocupado total" &
                                classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117329 ~ "117329_2",
@@ -240,7 +240,7 @@ if(sectors == TRUE){dat = dat %>%
                              variavel_codigo == 662 &
                                classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117329 ~ "117329_4",
 
-                             variavel_codigo == 2585 &
+                            variavel_codigo == 2585 &
                                classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117363 ~ "117363_1",
                              variavel == "Pessoal ocupado total" &
                                classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117363 ~ "117363_2",
@@ -249,7 +249,7 @@ if(sectors == TRUE){dat = dat %>%
                              variavel_codigo == 662 &
                                classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117363 ~ "117363_4",
 
-                             variavel_codigo == 2585
+                            variavel_codigo == 2585
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117484 ~ "117484_1",
                              variavel == "Pessoal ocupado total"
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117484 ~ "117484_2",
@@ -258,7 +258,7 @@ if(sectors == TRUE){dat = dat %>%
                              variavel_codigo == 662
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117484 ~ "117484_4",
 
-                             variavel_codigo == 2585
+                            variavel_codigo == 2585
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117543 ~ "117543_1",
                              variavel == "Pessoal ocupado total"
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117543 ~ "117543_2",
@@ -267,7 +267,7 @@ if(sectors == TRUE){dat = dat %>%
                              variavel_codigo == 662
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117543 ~ "117543_4",
 
-                             variavel_codigo == 2585
+                            variavel_codigo == 2585
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117555 ~ "117555_1",
                              variavel == "Pessoal ocupado total"
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117555 ~ "117555_2",
@@ -276,7 +276,7 @@ if(sectors == TRUE){dat = dat %>%
                              variavel_codigo == 662
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117555 ~ "117555_4",
 
-                             variavel_codigo == 2585
+                            variavel_codigo == 2585
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117608 ~ "117608_1",
                              variavel == "Pessoal ocupado total"
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117608 ~ "117608_2",
@@ -285,7 +285,7 @@ if(sectors == TRUE){dat = dat %>%
                              variavel_codigo == 662
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117608 ~ "117608_4",
 
-                             variavel_codigo == 2585
+                            variavel_codigo == 2585
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117666 ~ "117666_1",
                              variavel == "Pessoal ocupado total"
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117666 ~ "117666_2",
@@ -294,7 +294,7 @@ if(sectors == TRUE){dat = dat %>%
                              variavel_codigo == 662
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117666 ~ "117666_4",
 
-                             variavel_codigo == 2585
+                            variavel_codigo == 2585
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117673 ~ "117673_1",
                              variavel == "Pessoal ocupado total"
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117673 ~ "117673_2",
@@ -303,7 +303,7 @@ if(sectors == TRUE){dat = dat %>%
                              variavel_codigo == 662
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117673 ~ "117673_4",
 
-                             variavel_codigo == 2585
+                            variavel_codigo == 2585
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117714 ~ "117714_1",
                              variavel == "Pessoal ocupado total"
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117714 ~ "117714_2",
@@ -312,7 +312,7 @@ if(sectors == TRUE){dat = dat %>%
                              variavel_codigo == 662
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117714 ~ "117714_4",
 
-                             variavel_codigo == 2585
+                            variavel_codigo == 2585
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117774 ~ "117774_1",
                              variavel == "Pessoal ocupado total"
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117774 ~ "117774_2",
@@ -321,7 +321,7 @@ if(sectors == TRUE){dat = dat %>%
                              variavel_codigo == 662
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117774 ~ "117774_4",
 
-                             variavel_codigo == 2585
+                            variavel_codigo == 2585
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117788 ~ "117788_1",
                              variavel == "Pessoal ocupado total"
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117788 ~ "117788_2",
@@ -330,7 +330,7 @@ if(sectors == TRUE){dat = dat %>%
                              variavel_codigo == 662
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117788 ~ "117788_4",
 
-                             variavel_codigo == 2585
+                            variavel_codigo == 2585
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117810 ~ "117810_1",
                              variavel == "Pessoal ocupado total"
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117810 ~ "117810_2",
@@ -339,7 +339,7 @@ if(sectors == TRUE){dat = dat %>%
                              variavel_codigo == 662
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117810 ~ "117810_4",
 
-                             variavel_codigo == 2585
+                            variavel_codigo == 2585
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117838 ~ "117838_1",
                              variavel == "Pessoal ocupado total"
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117838 ~ "117838_2",
@@ -348,7 +348,7 @@ if(sectors == TRUE){dat = dat %>%
                              variavel_codigo == 662
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117838 ~ "117838_4",
 
-                             variavel_codigo == 2585
+                            variavel_codigo == 2585
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117861 ~ "117861_1",
                              variavel == "Pessoal ocupado total"
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117861 ~ "117861_2",
@@ -357,7 +357,7 @@ if(sectors == TRUE){dat = dat %>%
                              variavel_codigo == 662
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117861 ~ "117861_4",
 
-                             variavel_codigo == 2585
+                            variavel_codigo == 2585
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117888 ~ "117888_1",
                              variavel == "Pessoal ocupado total"
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117888 ~ "117888_2",
@@ -366,7 +366,7 @@ if(sectors == TRUE){dat = dat %>%
                              variavel_codigo == 662
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117888 ~ "117888_4",
 
-                             variavel_codigo == 2585
+                            variavel_codigo == 2585
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117892 ~ "117892_1",
                              variavel == "Pessoal ocupado total"
                              & classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo == 117892 ~ "117892_2",
@@ -381,8 +381,8 @@ if(sectors == TRUE){dat = dat %>%
 dat = dat %>%
   dplyr::select(-'classificacao_nacional_de_atividades_economicas_cnae_2_0') %>%
   dplyr::arrange(classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo,variavel) %>%
-  tidyr::pivot_wider(id_cols = c(ano, geo_id),
-                     names_from = c(variavel,id_code),
+  tidyr::pivot_wider(id_cols = c(ano),
+                     names_from = c(variavel, id_code),
                      values_from = valor,
                      names_sep = '_V',
                      values_fn = sum,
@@ -451,18 +451,9 @@ if (language == 'pt'){
   }
 }
 
-remove_numbers = function(string){
-
-  stringr::str_remove(string = string, pattern = "_\\d")
-}
-
-dat = dat%>%
-  dplyr::rename_with(remove_numbers)
-
 ##########################
 ## Returning Data Frame ##
 ##########################
-
 
  return(dat)
 }
