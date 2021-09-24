@@ -581,7 +581,47 @@ load_dictionary = function(dataset){
       117892,'117892_4','Organismos internacionais e outras instituicoes extraterritoriais','International organizations and other extraterritorial institutions','1K BRL',NA,
 
 
-      )}
+    )}
+
+
+  if(dataset == "pibmunic"){
+    harmonization_dat = tibble::tribble(
+      ~var_code,~var_pt,~var_eng,~unit_value,~unit_quantity,
+
+      37,'Produto Interno Bruto a precos correntes','GDP at current prices','1K BRL',NA,
+      553,'Participacao do produto interno bruto a precos correntes no produto interno bruto a precos correntes da microrregiao geografica','Share of GDP at current prices in GDP at current prices of the geographic microregion',NA,'%',
+      552,'Participacao do produto interno bruto a precos correntes no produto interno bruto a precos correntes da mesorregiao geografica','Share of GDP at current prices in GDP at current prices of the geographic mesoregion',NA,'%',
+      497,'Participacao do produto interno bruto a precos correntes no produto interno bruto a precos correntes da unidade da federacao','Share of GDP at current prices in GDP at current prices of the federation unit',NA,'%',
+      530,'Participacao do produto interno bruto a precos correntes no produto interno bruto a precos correntes da grande regiao','Share of GDP at current prices in GDP at current prices in the wider region',NA,'%',
+      496,'Participacao do produto interno bruto a precos correntes no produto interno bruto a precos correntes do Brasil','Share of GDP at current prices in GDP at current prices in Brazil',NA,'%',
+      543,'Impostos, liquidos de subsídios, sobre produtos a precos correntes','Taxes, net of subsidies, on products at current prices','1K BRL',NA,
+      571,'Participacao dos impostos, liquidos de subsídios, sobre produtos a precos correntes nos impostos, liquidos de subsídios, sobre produtos a precos correntes da microrregiao geografica','Share of taxes, net of subsidies, on products at current prices in taxes, net of subsidies, on products at current prices of the geographic microregion',NA,'%',
+      570,'Participacao dos impostos, liquidos de subsídios, sobre produtos a precos correntes nos impostos, liquidos de subsídios, sobre produtos a precos correntes da mesorregiao geografica','Share of taxes, net of subsidies, on products at current prices in taxes, net of subsidies, on products at current prices in the geographic mesoregion',NA,'%',
+      545,'Participacao dos impostos, liquidos de subsídios, sobre produtos a precos correntes nos impostos, liquidos de subsídios, sobre produtos a precos correntes da unidade da federacao','Share of taxes, net of subsidies, on products at current prices in taxes, net of subsidies, on products at current prices of the federation unit',NA,'%',
+      551,'Participacao dos impostos, liquidos de subsídios, sobre produtos a precos correntes nos impostos, liquidos de subsídios, sobre produtos a precos correntes da grande regiao','Share of taxes, net of subsidies, on products at current prices in taxes, net of subsidies, on products at current prices in the wider region',NA,'%',
+      544,'Participacao dos impostos, liquidos de subsídios, sobre produtos a precos correntes nos impostos, liquidos de subsídios, sobre produtos a precos correntes do Brasil','Share of taxes, net of subsidies, on products at current prices in taxes, net of subsidies, on products at current prices in Brazil',NA,'%',
+      498,'Valor adicionado bruto a precos correntes total','Gross value added at current prices','1K BRL',NA,
+      555,'Participacao do valor adicionado bruto a precos correntes total no valor adicionado bruto a precos correntes total da microrregiao geografica','Share of gross value added at current prices in the gross value added at current prices of the geographic microregion',NA,'%',
+      554,'Participacao do valor adicionado bruto a precos correntes total no valor adicionado bruto a precos correntes total da mesorregiao geografica','Share of the gross value added at current prices in the gross value added at current prices of the geographic mesoregion',NA,'%',
+      500,'Participacao do valor adicionado bruto a precos correntes total no valor adicionado bruto a precos correntes total da unidade da federacao','Share of the gross value added at current prices in the gross value added at current prices of the federation unit',NA,'%',
+      546,'Participacao do valor adicionado bruto a precos correntes total no valor adicionado bruto a precos correntes total da grande regiao','Share of gross value added at current prices in the gross value added at current prices in the wider region',NA,'%',
+      499,'Participacao do valor adicionado bruto a precos correntes total no valor adicionado bruto a precos correntes total do Brasil','Share of gross value added at current prices in gross value added at current prices in Brazil',NA,'%',
+      513,'Valor adicionado bruto a precos correntes da agropecuaria','Gross value added at current prices in farming','1K BRL',NA,
+      516,'Participacao do valor adicionado bruto a precos correntes da agropecuaria no valor adicionado bruto a precos correntes total','Share of gross value added at current prices of the farming sector in total gross value added at current prices',NA,'%',
+      557,'Participacao do valor adicionado bruto a precos correntes da agropecuaria no valor adicionado bruto a precos correntes da agropecuaria da microrregiao geografica','Share of gross value added at current prices of the farming sector in gross value added at current prices in farming the geographic microregion',NA,'%',
+      556,'Participacao do valor adicionado bruto a precos correntes da agropecuaria no valor adicionado bruto a precos correntes da agropecuaria da mesorregiao geografica','Share of gross value added at current prices of the farming sector in gross value added at current prices in farming the geographic mesoregion',NA,'%',
+      515,'Participacao do valor adicionado bruto a precos correntes da agropecuaria no valor adicionado bruto a precos correntes da agropecuaria da unidade da federacao','Share of gross value added at current prices of the farming sector in gross value added at current prices in farming in the federation unit',NA,'%',
+      547,'Participacao do valor adicionado bruto a precos correntes da agropecuaria no valor adicionado bruto a precos correntes da agropecuaria da grande regiao','Share of gross value added at current prices of the farming sector in gross value added at current prices in farming in the wider region',NA,'%',
+      514,'Participacao do valor adicionado bruto a precos correntes da agropecuaria no valor adicionado bruto a precos correntes da agropecuaria do Brasil','Share of gross value added at current prices of the farming sector in the gross value added at current prices in farming sector in Brazil',NA,'%',
+      517,'Valor adicionado bruto a precos correntes da industria','Gross value added at current prices in industry','1K BRL',NA,
+      520,'Participacao do valor adicionado bruto a precos correntes da industria no valor adicionado bruto a precos correntes total','Share of gross value added at current prices of the industrial sector in total gross value added at current prices',NA,'%',
+      559,'Participacao do valor adicionado bruto a precos correntes da industria no valor adicionado bruto a precos correntes da industria da microrregiao geografica','Share of gross value added at current prices of the industrial sector in the gross value added at current prices of the industrial sector of the geographic microregion',NA,'%',
+      558,'Participacao do valor adicionado bruto a precos correntes da industria no valor adicionado bruto a precos correntes da industria da mesorregiao geografica','Share of the gross value added at current prices of the industrial sector in the gross value added at current prices of the industrial sector of the geographical mesoregion',NA,'%',
+      519,'Participacao do valor adicionado bruto a precos correntes da industria no valor adicionado bruto a precos correntes da industria da unidade da federacao','Share of the gross value added at current prices of the industrial sector in the gross value added at current prices of the industrial sector of the federation unit',NA,'%',
+      548,'Participacao do valor adicionado bruto a precos correntes da industria no valor adicionado bruto a precos correntes da industria da grande regiao','Share of gross value added at current industry prices in gross value added at current industry prices in the wider region',NA,'%',
+      518,'Participacao do valor adicionado bruto a precos correntes da industria no valor adicionado bruto a precos correntes da industria do Brasil','Share of gross value added at current prices in the industrial sector in the gross value added at current prices in the industrial sector in Brazil',NA,'%',
+
+    )}
 
   ############
   ## Return ##
