@@ -31,20 +31,20 @@ load_pibmunic <- function(dataset = "pibmunic", raw_data,
                           geo_level, time_period,
                           language = "eng",
                           legal_amazon_only = FALSE) {
-  
+
   sidra_code <- available_time <- AMZ_LEGAL <- municipio_codigo <- NULL
-  
-  
+
+
   #############################
   ## Define Basic Parameters ##
   #############################
-  
+
   param=list()
   param$dataset = dataset
   param$geo_level = geo_level
   param$time_period = time_period
   param$language = language
-  
+
   if (!is.numeric(param$dataset)){
     param$code = datasets_link() %>%
       dplyr::filter(dataset == param$dataset) %>%
@@ -52,28 +52,28 @@ load_pibmunic <- function(dataset = "pibmunic", raw_data,
       unlist() %>%
       as.numeric()
   } else {param$code = param$dataset}
-  
+
   ## Check if year is acceptable
-  
+
   year_check = datasets_link() %>%
     dplyr::filter(dataset == param$dataset) %>%
     dplyr::select(available_time) %>%
     unlist() %>% as.character() %>%
     stringr::str_split(pattern = '-') %>%
     unlist() %>% as.numeric()
-  
+
   if (min(time_period) < year_check[1]){stop('Provided time period less than supported. Check documentation for time availability.')}
   if (max(time_period) > year_check[2]){stop('Provided time period greater than supported. Check documentation for time availability.')}
   if (legal_amazon_only & geo_level != "municipality"){stop('legal_amazon_only = TRUE is only available for geo_level = "municipality".')}
-  
-  
+
+
   ##############
   ## Download ##
   ##############
-  
+
   # We need to show year that is being downloaded as well
   # Heavy Datasets may take several minutes
-  
+
   dat = as.list(as.character(param$time_period)) %>%
     purrr::map(function(year_num){
       #suppressMessages(
@@ -84,22 +84,22 @@ load_pibmunic <- function(dataset = "pibmunic", raw_data,
     }) %>%
     dplyr::bind_rows() %>%
     tibble::as_tibble()
-  
-  
+
+
   ## Filter for Legal Amazon
   if (legal_amazon_only) {
     legal_amazon_filtered <- legal_amazon %>% dplyr::filter(AMZ_LEGAL == 1)
-    
+
     dat <- dat %>%
       dplyr::filter(municipio_codigo %in% unique(legal_amazon_filtered$CD_MUN))
   }
-  
-  
+
+
   ## Return Raw Data
-  
+
   if (raw_data == TRUE){return(dat)}
-  
-  
+
+
 }
 
 
@@ -120,8 +120,7 @@ load_pibmunic <- function(dataset = "pibmunic", raw_data,
 
 dat = dat %>%
   janitor::clean_names() %>%
-  dplyr::mutate_all(function(var){stringi::stri_trans_general(str=var,id="Latin-ASCII")})# %>%
-# dplyr::mutate_all(clean_custom)
+  dplyr::mutate_all(function(var){stringi::stri_trans_general(str=var,id="Latin-ASCII")})
 
 dat = dat %>%
   dplyr::select(-c(nivel_territorial_codigo,nivel_territorial,ano_codigo)) %>%
@@ -201,7 +200,7 @@ dat = dat %>%
 
 
 if (language == 'eng'){
-  
+
   dat = dat %>%
     dplyr::rename(year = ano)
 }
@@ -216,29 +215,29 @@ labelled <- function(x, label) {
 }
 
 label_data_eng = function(df,cols,dic){
-  
+
   label_value = as.character(dic[dic$var_code == cols,'var_eng'])
-  
+
   df = df %>%
     dplyr::mutate_at(vars(tidyr::matches(cols)),
                      ~ labelled(.,as.character(dic[dic$var_code == cols,'var_eng']))
     )
-  
+
   return(df)
-  
+
 }
 
 label_data_pt = function(df,cols,dic){
-  
+
   label_value = as.character(dic[dic$var_code == cols,'var_pt'])
-  
+
   df = df %>%
     dplyr::mutate_at(vars(tidyr::matches(cols)),
                      ~ labelled(.,as.character(dic[dic$var_code == cols,'var_pt']))
     )
-  
+
   return(df)
-  
+
 }
 
 ## Load Dictionary
@@ -250,26 +249,26 @@ types = types[types != "0"] ## Remove 0
 
 
 if (language == 'eng'){
-  
+
   # f = dat %>%
   #   dplyr::mutate_at(vars(tidyr::matches(as.character(types[1]))),
   #                    ~ labelled::set_variable_labels(. = as.character(dic[dic$var_code == types[1],'var_eng']))
   #   )
-  
+
   for (i in 1:length(types)){
-    
+
     dat = label_data_eng(dat,cols=types[i],dic=dic)
-    
+
   }
-  
+
 }
 
 if (language == 'pt'){
-  
+
   for (i in 1:length(types)){
-    
+
     dat = label_data_pt(dat,cols=types[i],dic=dic)
-    
+
   }
 }
 
