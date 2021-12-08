@@ -5,6 +5,8 @@
 
 <!-- badges: start -->
 
+<img src="https://raw.githubusercontent.com/datazoompuc/datazoom.amazonia/master/logo.jpg?token=AU72KNRBXYJH4TDCW7P5RY3BXH7FK"sanitize=true&raw=true align="left" width="100" hspace="10" vspace="6">
+
 [![CRAN
 version](https://www.r-pkg.org/badges/version/datazoom.amazonia?color=orange)](https://cran.r-project.org/package=datazoom.amazonia)
 [![CRAN
