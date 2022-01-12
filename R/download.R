@@ -75,6 +75,8 @@ sidra_download = function(sidra_code = NULL,year,geo_level = 'municipality',
       tibble::as_tibble() %>%
       janitor::clean_names()
 
+    if (nrow(dat) == 0) {stop("Error in Download.")}
+
     base::message(base::cat('Download Succesfully Completed!'))
 
     return(dat)
@@ -325,7 +327,7 @@ external_download = function(dataset=NULL,source=NULL,year=NULL,geo_level = NULL
     if (dataset == 'comex_export_mun'){path = paste(param$url,'/EXP_',param$year,'_MUN.csv',sep='')}
     if (dataset == 'comex_import_mun'){path = paste(param$url,'/IMP_',param$year,'_MUN.csv',sep='')}
     if (dataset == 'comex_export_prod'){path = paste(param$url,'/EXP_',param$year,'.csv',sep='')}
-    if (dataset == 'comex_import_prod'){path = paste(param$url,'/IMP_',param$year,'_V2.csv',sep='')}
+    if (dataset == 'comex_import_prod'){path = paste(param$url,'/IMP_',param$year,'.csv',sep='')}
   }
 
   ############
@@ -404,7 +406,7 @@ external_download = function(dataset=NULL,source=NULL,year=NULL,geo_level = NULL
     if (geo_level == 'municipality'){
       path = 'https://drive.google.com/u/0/uc?confirm=bhfS&id=1rUc6H8BVKT9TH-ri6obzHVt7WI1eGUzd'}
     if (geo_level == 'state' | geo_level == 'country'){
-      path = 'https://seeg-br.s3.amazonaws.com/2019-v7.0/download/1-SEEG8_GERAL-BR_UF_2020.11.05_-_SITE.xlsx'
+      path = 'https://seeg-br.s3.amazonaws.com/Estat%C3%ADsticas/SEEG9/1-SEEG9_GERAL-BR_UF_2021.10.26_-_SITE.xlsx'
     }
   }
 
@@ -668,10 +670,10 @@ datasets_link = function(){
 
    # https://www.gov.br/produtividade-e-comercio-exterior/pt-br/assuntos/comercio-exterior/estatisticas/base-de-dados-bruta
 
-   'COMEX-EXP-PROD_NCM','comex_export_prod',NA,NA,NA,'https://balanca.economia.gov.br/balanca/bd/comexstat-bd/ncm',
-   'COMEX-IMP-PROD_NCM','comex_import_prod',NA,NA,NA,'https://balanca.economia.gov.br/balanca/bd/comexstat-bd/ncmv2',
-   'COMEX-EXP-MUNIC_FIRM','comex_export_mun',NA,NA,NA,'https://balanca.economia.gov.br/balanca/bd/comexstat-bd/mun',
-   'COMEX-IMP-MUNIC_FIRM','comex_import_mun',NA,NA,NA,'https://balanca.economia.gov.br/balanca/bd/comexstat-bd/mun',
+   'COMEX-EXP-PROD_NCM','comex_export_prod',NA,'1997-2021',NA,'https://balanca.economia.gov.br/balanca/bd/comexstat-bd/ncm',
+   'COMEX-IMP-PROD_NCM','comex_import_prod',NA,'1997-2021',NA,'https://balanca.economia.gov.br/balanca/bd/comexstat-bd/ncm',
+   'COMEX-EXP-MUNIC_FIRM','comex_export_mun',NA,'1997-2021',NA,'https://balanca.economia.gov.br/balanca/bd/comexstat-bd/mun',
+   'COMEX-IMP-MUNIC_FIRM','comex_import_mun',NA,'1997-2021',NA,'https://balanca.economia.gov.br/balanca/bd/comexstat-bd/mun',
 
 
    ##########
@@ -818,4 +820,21 @@ datasets_link = function(){
 
   return(link)
 
+}
+
+datasets_seeg = function(){
+
+  ## Add file type at the end in order to set the Curl Process
+
+  link = tibble::tribble(~survey,~dataset,~id_code,~link,
+
+                         'SEEG','seeg_farming',100,'http://seeg.eco.br/download',
+                         'SEEG','seeg_industry',101,'http://seeg.eco.br/download',
+                         'SEEG','seeg_energy',102,'http://seeg.eco.br/download',
+                         'SEEG','seeg_land',103,'http://seeg.eco.br/download',
+                         'SEEG','seeg_residuals',104,'http://seeg.eco.br/download',
+
+
+  )
+  return(link)
 }

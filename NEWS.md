@@ -1,3 +1,11 @@
+# datazoom.amazonia 0.2.0
+
+* All functions supporting treated data download
+
+# datazoom.amazonia 0.1.0
+
+* All functions supporting raw data download
+
 # datazoom.amazonia 0.1.0.9000
 
 * Added a `NEWS.md` file to track changes to the package.
@@ -33,3 +41,9 @@
 
 # datazoom.amazonia 0.12.0.9000
 * Added functions for IPS data 
+
+# datazoom.amazonia 0.13.0.9000
+* Added functions for SEEG data
+
+# datazoom.amazonia 0.14.0.9000
+* Added SEEG 2020 data

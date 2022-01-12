@@ -381,7 +381,7 @@ if(sectors == TRUE){dat = dat %>%
 dat = dat %>%
   dplyr::select(-'classificacao_nacional_de_atividades_economicas_cnae_2_0') %>%
   dplyr::arrange(classificacao_nacional_de_atividades_economicas_cnae_2_0_codigo,variavel) %>%
-  tidyr::pivot_wider(id_cols = c(ano),
+  tidyr::pivot_wider(id_cols = c(ano, geo_id),
                      names_from = c(variavel, id_code),
                      values_from = valor,
                      names_sep = '_V',
@@ -450,6 +450,10 @@ if (language == 'pt'){
 
   }
 }
+
+remove_numbers = function(string){
+
+  stringr::str_remove(string = string, pattern = "_\\d")}
 
 ##########################
 ## Returning Data Frame ##

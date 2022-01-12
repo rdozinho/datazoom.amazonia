@@ -4,7 +4,6 @@
 #'
 #' @param dataset A dataset name ("sigmine_active")
 #' @param raw_data A \code{boolean} setting the return of raw (\code{TRUE}) or processed (\code{FALSE}) data.
-#' @param geo_level A \code{string} that defines the geographic level of the data. In this case, could be "municipality" or "state".
 #' @param language A \code{string} that indicates in which language the data will be returned. Currently, only Portuguese ("pt") and English ("eng") are supported. Defaults to "eng".
 #'
 #' @return A \code{tibble} with the selected data.
@@ -17,17 +16,16 @@
 #' @examples \dontrun{
 #' # download state raw data
 #' sigmine_active <- load_sigmine(dataset = 'sigmine_active',
-#'                                raw_data = TRUE,
-#'                                geo_level = 'state')
+#'                                raw_data = TRUE)
 #' }
 
 
 load_sigmine = function(dataset = 'sigmine_active',
-                        raw_data, geo_level,
+                        raw_data,
                         language = 'eng'){
 
 
-  survey <- link <- NULL
+  survey <- link <- nome <- uf <- NULL
 
   #############################
   ## Define Basic Parameters ##
@@ -35,7 +33,7 @@ load_sigmine = function(dataset = 'sigmine_active',
 
   param=list()
   param$dataset = dataset
-  param$geo_level = geo_level
+  #param$geo_level = geo_level
   #param$time_period = time_period
   param$language = language
   #param$time_id = time_id
@@ -60,25 +58,6 @@ load_sigmine = function(dataset = 'sigmine_active',
   ## Downloading Data ##
   ######################
 
-  # if (is.null(source)) {
-  #   p1f <- tempfile(fileext = ".zip")
-  #   tryCatch(
-  #     expr = {
-  #       url1 <- "https://app.anm.gov.br/dadosabertos/SIGMINE/PROCESSOS_MINERARIOS/BRASIL.zip"
-  #       download.file(url1, p1f, mode = "wb")
-  #     },
-  #     error = function(e) {
-  #       url1 <- "http://sigmine.dnpm.gov.br/sirgas2000/brasil.zip"
-  #       download.file(url1, p1f, mode = "wb")
-  #     }
-  #   )
-  # } else {
-  #   p1f <- paste0(source, "/brasil.zip")
-  # }
-  # dir <- gsub(p1f, pattern = "\\.zip", replacement = "")
-  # unzip(p1f, exdir = dir)
-  # a <- sf::read_sf(dir)
-
   dat = external_download(dataset = param$dataset,source='sigmine') %>%
           janitor::clean_names()
 
@@ -90,95 +69,40 @@ load_sigmine = function(dataset = 'sigmine_active',
   ## Data Engineering ##
   ######################
 
-  ## State Level Data
+  a <- dat %>%
+    dplyr::mutate(dplyr::across(nome:uf,
+                  ~ ifelse(stringr::str_detect(.x, "DADO N.O CADASTRADO"),
+                           NA, .x)
+                                )
+                  )
 
-  # if (space_aggregation == "state" | space_aggregation == "estado") {
-  #   if (language == "pt") {
-  #     a$AREA_HA <- a$AREA_HA * 10000
-  #     names(a)[names(a) == "NUMERO"] <- "numero"
-  #     names(a)[names(a) == "ULT_EVENTO"] <- "ultimo_evento"
-  #     names(a)[names(a) == "UF"] <- "estado"
-  #     names(a)[names(a) == "ANO"] <- "ano"
-  #     names(a)[names(a) == "PROCESSO"] <- "processo"
-  #     names(a)[names(a) == "ID"] <- "id"
-  #     names(a)[names(a) == "FASE"] <- "fase"
-  #     names(a)[names(a) == "NOME"] <- "empresa"
-  #     names(a)[names(a) == "SUBS"] <- "mineral"
-  #     names(a)[names(a) == "USO"] <- "uso"
-  #     names(a)[names(a) == "AREA_HA"] <- "area_m2"
-  #   } else if (language == "eng") {
-  #     a$AREA_HA <- a$AREA_HA * 10000
-  #     names(a)[names(a) == "NUMERO"] <- "number"
-  #     names(a)[names(a) == "ULT_EVENTO"] <- "last_event"
-  #     names(a)[names(a) == "UF"] <- "state"
-  #     names(a)[names(a) == "ANO"] <- "year"
-  #     names(a)[names(a) == "PROCESSO"] <- "process"
-  #     names(a)[names(a) == "ID"] <- "id"
-  #     names(a)[names(a) == "FASE"] <- "phase"
-  #     names(a)[names(a) == "NOME"] <- "company"
-  #     names(a)[names(a) == "SUBS"] <- "mineral"
-  #     names(a)[names(a) == "USO"] <- "use"
-  #     names(a)[names(a) == "AREA_HA"] <- "area_m2"
-  #   }
-  #   ret <- a
-  #
-  #   ## Municipality Level Data
-  #
-  # } else if (space_aggregation == "municipality" | space_aggregation == "municipio") {
-  #   geo_amazon <- geobr::read_municipality(year = 2019, simplified = TRUE)
-  #   operation_crs <- sf::st_crs("+proj=poly +lat_0=0 +lon_0=-54 +x_0=5000000 +y_0=10000000 +ellps=aust_SA +units=m +no_defs")
-  #   a <- sf::st_transform(a, operation_crs)
-  #   geo_amazon <- sf::st_transform(geo_amazon, operation_crs)
-  #
-  #   sf::st_agr(a) <- "constant"
-  #   sf::st_agr(geo_amazon) <- "constant"
-  #   al <- sf::st_zm(a)
-  #   al <- sf::st_intersection(sf::st_make_valid(al), geo_amazon) %>%
-  #     dplyr::mutate(calculated_area = sf::st_area(.data$geometry)) %>%
-  #     dplyr::group_by(.data$abbrev_state, .data$ANO) %>%
-  #     sf::st_drop_geometry()
-  #
-  #   al$AREA_HA <- NULL
-  #   al$UF <- NULL
-  #   al$code_region <- NULL
-  #   al$code_state <- NULL
-  #   al$ULT_EVENTO <- NULL
-  #   al$NUMERO <- NULL
-  #   al$name_region <- NULL
-  #   al$name_state <- NULL
-  #
-  #   ########################
-  #   ## Renaming Variables ##
-  #   ########################
-  #
-  #
-  #   if (language == "pt") {
-  #     names(al)[names(al) == "ANO"] <- "ano"
-  #     names(al)[names(al) == "PROCESSO"] <- "processo"
-  #     names(al)[names(al) == "ID"] <- "id"
-  #     names(al)[names(al) == "FASE"] <- "fase"
-  #     names(al)[names(al) == "NOME"] <- "empresa"
-  #     names(al)[names(al) == "SUBS"] <- "mineral"
-  #     names(al)[names(al) == "USO"] <- "uso"
-  #     names(al)[names(al) == "name_muni"] <- "municipio"
-  #     names(al)[names(al) == "abbrev_state"] <- "estado"
-  #     names(al)[names(al) == "calculated_area"] <- "area_calculada_m2"
-  #   } else if (language == "eng") {
-  #     names(al)[names(al) == "ANO"] <- "year"
-  #     names(al)[names(al) == "PROCESSO"] <- "process"
-  #     names(al)[names(al) == "ID"] <- "id"
-  #     names(al)[names(al) == "FASE"] <- "phase"
-  #     names(al)[names(al) == "NOME"] <- "company"
-  #     names(al)[names(al) == "SUBS"] <- "mineral"
-  #     names(al)[names(al) == "USO"] <- "use"
-  #     names(al)[names(al) == "name_muni"] <- "municipality"
-  #     names(al)[names(al) == "abbrev_state"] <- "state"
-  #     names(al)[names(al) == "calculated_area"] <- "calculated_area_m2"
-  #   }
-  #   ret <- al
-  # }
-  #
-  # return(ret)
+  if (language == "pt") {
+
+    a$area_ha <- a$area_ha * 10000
+    names(a)[names(a) == "ult_evento"] <- "ultimo_evento"
+    names(a)[names(a) == "nome"] <- "empresa"
+    names(a)[names(a) == "subs"] <- "mineral"
+    names(a)[names(a) == "uso"] <- "uso"
+    names(a)[names(a) == "area_ha"] <- "area_m2"
+
+  } else if (language == "eng") {
+
+    a$area_ha <- a$area_ha * 10000
+    names(a)[names(a) == "numero"] <- "number"
+    names(a)[names(a) == "ult_evento"] <- "last_event"
+    names(a)[names(a) == "uf"] <- "state"
+    names(a)[names(a) == "ano"] <- "year"
+    names(a)[names(a) == "processo"] <- "process"
+    names(a)[names(a) == "id"] <- "id"
+    names(a)[names(a) == "fase"] <- "phase"
+    names(a)[names(a) == "nome"] <- "company"
+    names(a)[names(a) == "subs"] <- "mineral"
+    names(a)[names(a) == "uso"] <- "use"
+    names(a)[names(a) == "area_ha"] <- "area_m2"
+
+  }
+
+  return(a)
 
 }
 

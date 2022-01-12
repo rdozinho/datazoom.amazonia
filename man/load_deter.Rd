@@ -5,16 +5,12 @@
 \alias{load_deter}
 \title{DETER - Forest Degradation in the Brazilian Amazon}
 \usage{
-load_deter(dataset = NULL, raw_data, geo_level, time_period, language = "eng")
+load_deter(dataset = NULL, raw_data, language = "eng")
 }
 \arguments{
 \item{dataset}{A dataset name ("deter_amz", "deter_cerrado") with information about both Amazon and Cerrado}
 
 \item{raw_data}{A \code{boolean} setting the return of raw (\code{TRUE}) or processed (\code{FALSE}) data.}
-
-\item{geo_level}{A \code{string} that defines the geographic level of the data. Can be "municipality" or "state".}
-
-\item{time_period}{A \code{numeric} indicating what years will the data be loaded in the format YYYY. Can be a sequence of numbers such as 2010:2012.}
 
 \item{language}{A \code{string} that indicates in which language the data will be returned. Currently, only Portuguese ("pt") and English ("eng") are supported. Defaults to "eng".}
 }
@@ -22,14 +18,19 @@ load_deter(dataset = NULL, raw_data, geo_level, time_period, language = "eng")
 A \code{tibble} with the selected data.
 }
 \description{
-Loads information on change in forest cover in the Amazon. Survey is done at state or municipal level. See \url{http://www.obt.inpe.br/OBT/assuntos/programas/amazonia/deter/deter}
+Loads information on change in forest cover in the Amazon. See \url{http://www.obt.inpe.br/OBT/assuntos/programas/amazonia/deter/deter}
 }
 \examples{
 \dontrun{
-# download municipality raw data from all years from Amazonia
+# Download raw data (raw_data = TRUE) from Amazonia (dataset = "deter_amz")
 deter_amz <- load_deter(dataset = 'deter_amz',
-                        raw_data = TRUE,
-                        geo_level = 'municipality',
-                        time_period = "all")
+                        raw_data = TRUE)
+
+# Download treated data (raw_data = FALSE) from Cerrado (dataset = "deter_cerrado")
+# in portuguese (language = 'pt')
+deter_cer <- load_deter(dataset = 'deter_cerrado',
+                        raw_data = FALSE,
+                        language = "pt")
+
 }
 }

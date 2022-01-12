@@ -486,7 +486,7 @@ load_dictionary = function(dataset){
   # Cempre
   ########
 
-   if (dataset == 'cempre'){
+  if (dataset == 'cempre'){
 
     harmonization_dat = tibble::tribble(
       ~var_code,~id_code,~var_pt,~var_eng,~unit_value,~unit_quantity,
@@ -531,10 +531,10 @@ load_dictionary = function(dataset){
       117543,'117543_2','Alojamento e alimentacao','Accommodation and food','1K','People',
       117543,'117543_3','Alojamento e alimentacao','Accommodation and food','1K','People',
       117543,'117543_4','Alojamento e alimentacao','Accommodation and food','1K BRL',NA,
-      117555,'117555_1','informacao e comunicacao','Information and communication','1K','Units',
-      117555,'117555_2','informacao e comunicacao','Information and communication','1K','People',
-      117555,'117555_3','informacao e comunicacao','Information and communication','1K','People',
-      117555,'117555_4','informacao e comunicacao','Information and communication','1K BRL',NA,
+      117555,'117555_1','Informacao e comunicacao','Information and communication','1K','Units',
+      117555,'117555_2','Informacao e comunicacao','Information and communication','1K','People',
+      117555,'117555_3','Informacao e comunicacao','Information and communication','1K','People',
+      117555,'117555_4','Informacao e comunicacao','Information and communication','1K BRL',NA,
       117608,'117608_1','Atividades financeiras, de seguros e servicos relacionados','Financial, insurance and related services activities','1K','Units',
       117608,'117608_2','Atividades financeiras, de seguros e servicos relacionados','Financial, insurance and related services activities','1K','People',
       117608,'117608_3','Atividades financeiras, de seguros e servicos relacionados','Financial, insurance and related services activities','1K','People',
@@ -582,7 +582,6 @@ load_dictionary = function(dataset){
 
 
     )}
-
 
   if(dataset == "pibmunic"){
     harmonization_dat = tibble::tribble(
@@ -636,7 +635,7 @@ load_dictionary = function(dataset){
       526,'Participacao do valor adicionado bruto a precos correntes da administracao, defesa, educacao e saude publicas e seguridade social no valor adicionado bruto a precos correntes da administracao, defesa, educacao e saude publicas e seguridade social do Brasil','Share of gross value added at current prices for public administration, defense, education and health and social security in the gross value added at current prices for public administration, defense, education and health and social security in Brazil',NA,'%',
 
 
-  )}
+    )}
 
   ############
   ## Return ##

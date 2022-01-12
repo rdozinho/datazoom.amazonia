@@ -36,7 +36,7 @@ load_br_trade <- function(dataset = NULL, raw_data,
 
   ## We want to download both imports and exports data
 
-  ## Type: By NCM, Municipio da empresa exportadora/importadora e Posicao do Sistema Harmonizado (SH4),
+  ## Type: By NCM, Município da empresa exportadora/importadora e Posição do Sistema Harmonizado (SH4),
   ##
 
   ## https://www.gov.br/produtividade-e-comercio-exterior/pt-br/assuntos/comercio-exterior/estatisticas/base-de-dados-bruta
@@ -51,7 +51,7 @@ load_br_trade <- function(dataset = NULL, raw_data,
 
 
   ## To-Do:
-  ## Include Labels
+    ## Include Labels
 
   ###########################
   ## Bind Global Variables ##
@@ -68,8 +68,8 @@ load_br_trade <- function(dataset = NULL, raw_data,
 
 
   ## There are two main dissagregated data levels in the COMEX website:
-  ## 1 - Dissagregated by Classification: NCM
-  ## 2 - Disagreggated by Exporter/Importer Municipality
+    ## 1 - Dissagregated by Classification: NCM
+    ## 2 - Disagreggated by Exporter/Importer Municipality
 
   #############################
   ## Define Basic Parameters ##
@@ -83,9 +83,9 @@ load_br_trade <- function(dataset = NULL, raw_data,
   param$raw_data = raw_data
 
   param$survey_name = datasets_link() %>%
-    dplyr::filter(dataset == param$dataset) %>%
-    dplyr::select(survey) %>%
-    unlist()
+      dplyr::filter(dataset == param$dataset) %>%
+      dplyr::select(survey) %>%
+      unlist()
 
   param$url = datasets_link() %>%
     dplyr::filter(dataset == param$dataset) %>%
@@ -133,7 +133,7 @@ load_br_trade <- function(dataset = NULL, raw_data,
 
   ## Returning Raw Data
 
-  ## Just Add Translation
+    ## Just Add Translation
 
   if (param$raw_data == TRUE){return(dat)}
 
@@ -145,8 +145,8 @@ load_br_trade <- function(dataset = NULL, raw_data,
 
   ## This Needs to Load the Dictionary Depending on param$prod_class
 
-  # HS (2,4,6) - https://balanca.economia.gov.br/balanca/bd/tabelas/NCM_SH.csv
-  # NCM - https://balanca.economia.gov.br/balanca/bd/tabelas/NCM.csv
+    # HS (2,4,6) - https://balanca.economia.gov.br/balanca/bd/tabelas/NCM_SH.csv
+    # NCM - https://balanca.economia.gov.br/balanca/bd/tabelas/NCM.csv
 
   if (param$dataset == "comex_export_mun" | param$dataset == "comex_import_mun") {
 
